@@ -2,7 +2,7 @@
 - hosts: digitalocean
 
   vars:
-    do_token: 186a6fd279015640995dce8938ed632020b2c9e6513af57c9cd7473217e280c1
+    do_token: ad9bf31aea5e49044409d4a5d460050fd17de4b4d8dac208721778aeae428ed3
     droplets:
     - droplet-one
     - droplet-two
@@ -25,7 +25,7 @@
 
   - name: ensure droplets exist
     digital_ocean: >
-      state=present
+      state=absent
       command=droplet
       name={{ item }}
       unique_name=yes
@@ -37,6 +37,6 @@
     with_items: "{{ droplets }}"
     register: droplet_details
 
-  - debug: msg="IP is {{ item.droplet.ip_address }}"
-    with_items: "{{ droplet_details.results }}"
+#  - debug: msg="IP is {{ item.droplet.ip_address }}"
+#    with_items: "{{ droplet_details.results }}"
 
