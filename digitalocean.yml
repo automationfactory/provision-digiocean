@@ -1,12 +1,11 @@
 ---
-- hosts: digitalocean
+- hosts: localhost
 
   vars:
     do_token: ad9bf31aea5e49044409d4a5d460050fd17de4b4d8dac208721778aeae428ed3
     droplets:
     - droplet-one
     - droplet-two
-
   tasks:
   - name: ensure ssh key exists
     user: >
