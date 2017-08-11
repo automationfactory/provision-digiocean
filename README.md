@@ -31,7 +31,7 @@ To list all Droplets in your account, send a GET request to /v2/droplets:
     -H "Authorization: Bearer $TOKEN" 
 
 Example: Create a New Droplet
-To create a new Droplet, send a POST request to /v2/droplets. For a full list of attributes that must be set to successfully create a droplet, see the full documentation. The following example creates an Ubuntu 14.04 droplet called "My-Droplet" in the NYC 2 data center, with 512MB RAM:
+To create a new Droplet, send a POST request to /v2/droplets. For a full list of attributes that must be set to successfully create a droplet, see the full documentation. The following example creates an Ubuntu 14.04 droplet called "My-Droplet" in the BLR 1 data center, with 512MB RAM:
 
     curl -X POST "https://api.digitalocean.com/v2/droplets" \
     -d'{"name":"My-Droplet","region":"blr1","size":"512mb","image":"ubuntu-14-04-x64"}' \
@@ -42,10 +42,10 @@ Note: This request, like any other request that makes a change to your account, 
 
 
 Example: Create Multiple Droplets
-You can also create multiple Droplets with the same attributes using a single API request by sending a POST to /v2/droplets. Instead of providing a single name in the request, provide an array of names. The following example creates two Ubuntu 14.04 Droplets, one called "sub-01.example.com" and one called "sub-02.example.com" They both are in the NYC 2 data center, with 512MB RAM:
+You can also create multiple Droplets with the same attributes using a single API request by sending a POST to /v2/droplets. Instead of providing a single name in the request, provide an array of names. The following example creates two Ubuntu 14.04 Droplets, one called "sub-01.example.com" and one called "sub-02.example.com" They both are in the BLR 1 data center, with 512MB RAM:
 
     curl -X POST "https://api.digitalocean.com/v2/droplets" \
-    -d'{"names":["sub-01.example.com","sub-02.example.com"],"region":"nyc2","size":"512mb","image":"ubuntu-14-04-x64"}' \
+    -d'{"names":["sub-01.example.com","sub-02.example.com"],"region":"blr1","size":"512mb","image":"ubuntu-14-04-x64"}' \
     -H "Authorization: Bearer $TOKEN" \
     -H "Content-Type: application/json" 
 
